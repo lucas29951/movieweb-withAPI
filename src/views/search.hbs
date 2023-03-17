@@ -1,0 +1,47 @@
+<div class="container mt-4">
+    <div class="row mb-4">
+        <div class="col-md-5 mx-auto text-center">
+            <h3 class="profile-title-color">Search movie in OMDb API</h3>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <form class="d-flex" role="search" action="/searchTitle" method="GET">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search" aria-label="Search" id="title_search"
+                    name="title_search">
+                <span class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></span>
+            </div>
+        </form>
+    </div>
+
+    <div class="row-mb-4">
+        <p class="profile-title-color text-center">Select the movie you want to save:</p>
+        <form action="/save" method="GET">
+            <table class="table table-dark text-center">
+                <thead>
+                    <tr>
+                        <th>-</th>
+                        <th>Title</th>
+                        <th>Year</th>
+                        <th>Type</th>
+                        <th>Poster</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each results}}
+                    <tr>
+                        {{!--<td><input type="checkbox" name="saves[]" id="saves[]" value="{{this.imdbID}}"></td>--}}
+                        <td><a href="/save/{{this.imdbID}}" class="btn btn-success"><i class="fa-solid fa-plus"></i></a></td>
+                        <td>{{this.Title}}</td>
+                        <td>{{this.Year}}</td>
+                        <td>{{this.Type}}</td>
+                        <td><img src="{{this.Poster}}" alt="poster" class="rounded mx-auto d-block search-poster"></td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </form>
+    </div>
+
+</div>
