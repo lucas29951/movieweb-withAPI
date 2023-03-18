@@ -23,14 +23,14 @@ router.post('/add', isLoggedIn, async (req, res) => {
         data_type
     };
     await pool.query('INSERT INTO media set ?', [newMedia]);
-    req.flash('success', 'Movie saved successfully');
+    req.flash('success', 'File saved successfully');
     res.redirect('/');
 });
 
 router.get('/delete/:id', isLoggedIn, async (req, res) => {
     const { id } = req.params;
     await pool.query('DELETE FROM media WHERE ID = ?', [id]);
-    req.flash('success', 'Movie removed successfully');
+    req.flash('success', 'File removed successfully');
     res.redirect('/dashboard');
 });
 
@@ -55,7 +55,7 @@ router.post('/edit/:id', isLoggedIn, async (req, res) => {
         data_type
     };
     await pool.query('UPDATE media set ? WHERE id = ?', [newMedia, id]);
-    req.flash('success', 'Movie updated successfully');
+    req.flash('success', 'File updated successfully');
     res.redirect('/dashboard');
 });
 

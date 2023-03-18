@@ -342,7 +342,7 @@ body {
         width: 0;
         /*height: 480px;*/
         /*right: -100px;*/
-        right: 0;
+        right: -50;
         /*top: -20px;*/
         top: 0;
         -moz-box-shadow: -2px 2px 7px rgba(0, 0, 0, 0.6);

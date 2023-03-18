@@ -39,13 +39,11 @@ app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 app.use(passport.initialize());
 app.use(passport.session());
-//app.use(request());
 
 // global variables
 app.use((req, res, next) => {
     app.locals.success = req.flash('success');
     app.locals.error = req.flash('error');
-    app.locals.message = req.flash('message');
     app.locals.user = req.user;
     app.locals.files = req.files;
     app.locals.movies = req.movies;

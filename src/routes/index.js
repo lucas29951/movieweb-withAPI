@@ -6,7 +6,7 @@ const request = require('request');
 const pool = require('../database');
 const { isLoggedIn } = require('../lib/auth');
 const { apiKey } = require('../keys');
-const { response } = require('express');
+//const { response } = require('express');
 
 router.get('/', async (req, res) => {
     const media = await pool.query('SELECT * FROM media ORDER BY id DESC');
@@ -74,7 +74,7 @@ router.get('/searchTitle', isLoggedIn, (req, res) => {
             res.redirect('/');
         } else {
             const data = JSON.parse(body);
-            console.log(data.Search);
+            
             res.render('search', { results: data.Search });
         }
     });
