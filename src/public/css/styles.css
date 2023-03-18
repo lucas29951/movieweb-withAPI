@@ -262,7 +262,7 @@ body {
     -webkit-box-shadow: -2px 2px 7px rgba(0, 0, 0, 0.6);
     box-shadow: -2px 2px 7px rgba(0, 0, 0, 0.6);
     transition: all 500ms ease-out;
-    z-index: 10;
+    /*z-index: 10;*/
     opacity: 0;
 }
 
@@ -374,7 +374,7 @@ body {
         -webkit-box-shadow: -2px 2px 7px rgba(0, 0, 0, 0.6);
         box-shadow: -2px 2px 7px rgba(0, 0, 0, 0.6);
         transition: all 500ms ease-out;
-        z-index: 10;
+        /*z-index: 10;*/
         opacity: 1;
     }
 
@@ -382,7 +382,7 @@ body {
         font-size: 36px;
         padding-bottom: 0;
         color: #333333;
-        margin-top: -70px;
+        margin-top: -40px;
     }
 
     .moviecard .movie-year {
