@@ -9,7 +9,7 @@ const { apiKey } = require('../keys');
 //const { response } = require('express');
 
 router.get('/', async (req, res) => {
-    const media = await pool.query('SELECT * FROM media ORDER BY id DESC');
+    const media = await pool.query('SELECT * FROM media ORDER BY id DESC LIMIT 12');
     res.render('index', { media });
 });
 
